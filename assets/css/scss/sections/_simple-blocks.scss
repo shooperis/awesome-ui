@@ -1,0 +1,146 @@
+.main-content .simple-blocks {
+  position: relative;
+  overflow: hidden;
+
+  .wrapper {
+    padding-bottom: 150px;
+  
+    .content {
+      text-align: center;
+      margin-bottom: 56px;
+  
+      .pre-title {
+        color: $text-color-fifth;
+        // font-size: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.375em;
+      }
+  
+      .title {
+        color: $text-color-fourth;
+        // font-size: 41px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.10em;
+        margin: 15px 0px 16px;
+      }
+    }
+  
+    .list {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+
+      @include size(md) {
+        gap: 30px;
+        // justify-content: center;
+      }
+  
+      .block-item {
+        width: calc(100% / 3 - 30px);
+        padding: 70px 50px;
+        cursor: pointer;
+        background: linear-gradient(358.27deg, rgba(100, 123, 100, 0.77) -118.86%, rgba(100, 123, 100, 0) 25.62%, rgba(100, 123, 100, 0) 98.53%), #FFFFFF;
+        border-radius: 8px;
+        transition: background-color 0.2s ease-in-out;
+
+        @include size(md) {
+          // width: calc(100% / 2 - 30px);
+          min-width: 300px;
+        }
+
+        @include size(sm) {
+          // width: calc(100% - 75px);
+        }
+  
+        .icon {
+          width: 64px;
+          height: 64px;
+  
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+  
+        .title {
+          color: $text-color-primary;
+          font-size: 24px;
+          font-weight: 500;
+          font-variant: small-caps;
+          line-height: 1.16em;
+          margin: 20px 0px 6px;
+        }
+  
+        .text {
+          color: $text-color-secondary;
+          font-size: 16px;
+          font-weight: 500;
+          
+          p {
+            margin: 10px 0px;
+          }
+        }
+  
+        .title, .text {
+          transition: color 0.2s ease-in-out;
+        }
+  
+        &.active, &:hover {
+          background-color: #647B64;
+  
+          .title, .text {
+            color: #FFFFFF;
+          }
+  
+          .icon img {
+            filter: invert(100%) sepia(85%) saturate(0%) hue-rotate(160deg) brightness(150%) contrast(150%)
+          }
+        }
+      }
+  
+      &::before {
+        content: '';
+        width: 214px;
+        height: 214px;
+        background-image: url('../../assets/images/simple-blocks-bg-1.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+        left: -35px;
+        bottom: -35px;
+        z-index: -1;
+
+        @include size(md) {
+          // left: 0px;
+        }
+      }
+    }
+  
+    &::after {
+      content: '';
+      width: 350px;
+      height: 180px;
+      background: $gradient-color-bg-default;
+      background: $gradient-color-bg-gradient;
+      border-radius: 8px 8px 0px 0px;
+      transform: rotate(180deg);
+      position: absolute;
+      right: 0px;
+      bottom: 15%;
+      z-index: -1;
+
+      @include size(sm) {
+        // bottom: 55%;
+
+        right: -30%;
+      }
+
+      @include size(xs) {
+        right: -40%;
+      }
+    }
+  }
+}

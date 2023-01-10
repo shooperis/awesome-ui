@@ -1,0 +1,160 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $text-font-primary;
+  font-weight: 400;
+  font-size: 16px;
+  color: $text-color-primary;
+  background-color: $background-color;
+  background-image: url('../../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1320px;
+  margin: 0px auto;
+  padding: 0px $page-side-padding;
+
+  @include size(xl) {
+    max-width: 1140px;
+  }
+
+  @include size(lg) {
+    max-width: 960px;
+  }
+
+  @include size(md) {
+    max-width: 720px;
+  }
+
+  @include size(sm) {
+    max-width: 540px;
+  }
+
+  @include size(xs) {
+    width: 100%;
+  }
+}
+
+
+
+.main-content section {
+  .title {
+    font-size: 41px;
+
+    @include size(lg) {
+      font-size: 39px;
+    }
+
+    @include size(md) {
+      font-size: 37px;
+    }
+
+    @include size(sm) {
+      font-size: 35px;
+    }
+    
+    @include size(xs) {
+      font-size: 32px;
+    }
+  }
+
+  .pre-title {
+    font-size: 24px;
+
+    @include size(lg) {
+      font-size: 23px;
+    }
+
+    @include size(md) {
+      font-size: 22px;
+    }
+
+    @include size(sm) {
+      font-size: 21px;
+    }
+    
+    @include size(xs) {
+      font-size: 20px;
+    }
+  }
+}
+
+
+.text {
+  letter-spacing: 0.04em;
+  line-height: 1.32em;
+}
+
+.button {
+  font-family: $text-font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  color: $text-color-third;
+  text-decoration: none;
+  text-align: left;
+  background: $button-color-bg-default;
+  background: $button-color-bg-gradient;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 10px 15px;
+  transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+
+  &:hover {
+    color: $text-color-fourth;
+    background: transparent;
+    border-color: $button-color-bg-default;
+  }
+
+  &.big {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.155em;
+    padding: 25px 29px 24px;
+    display: inline-block;
+
+    @include size(md) {
+      padding: 24px 28px 23px;
+    }
+
+    @include size(sm) {
+      padding: 23px 27px 22px;
+    }
+
+    @include size(xs) {
+      padding: 22px 26px 21px;
+    }
+  }
+
+  &.arrow {
+    position: relative;
+    padding-right: 66px;
+
+    &::after {
+      content: '';
+      width: 22px;
+      height: 15px;
+      background-image: url('../../assets/images/icons/icon-arrow-right.svg');
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translateY(-50%);
+      transition: right 0.2s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        filter: invert(47%) sepia(9%) saturate(821%) hue-rotate(71deg) brightness(95%) contrast(91%);
+        right: 15px;
+      }
+    }
+  }
+}
+
+

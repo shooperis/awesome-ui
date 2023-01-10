@@ -1,0 +1,129 @@
+.main-content .text-with-image {
+  @include size(md) {
+    position: relative;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+    padding-bottom: 160px;
+  
+    @include size(lg) {
+      column-gap: 30px;
+    }
+
+    @include size(md) {
+      padding-bottom: 140px;
+    }
+
+    @include size(sm) {
+      padding-bottom: 120px;
+    }
+
+    @include size(xs) {
+      padding-bottom: 100px;
+    }
+  
+    .images {
+      width: calc(60% - 50px);
+      position: relative;
+  
+      @include size(lg) {
+        width: calc(50% - 15px);
+      }
+  
+      @include size(md) {
+        width: 25%;
+        position: absolute;
+        left: 0px;
+        top: 0%;
+        bottom: 20%;
+        z-index: -1;
+      }
+
+      @include size(sm) {
+        width: 22%;
+      }
+
+      @include size(xs) {
+        width: 20%;
+      }
+  
+      img {
+        width: 100%;
+        padding-right: 60px;
+        padding-bottom: 60px;
+  
+        @include size(lg) {
+          padding-right: 45px;
+          padding-bottom: 45px;
+        }
+  
+        @include size(md) {
+          height: 100%;
+          object-fit: none;
+          object-position: right top;
+        }
+      }
+  
+      &::after {
+        content: '';
+        background: $gradient-color-bg-default;
+        background: $gradient-color-bg-gradient;
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        right: 0px;
+        bottom: 0px;
+        z-index: -1;
+      }
+    }
+  
+    .content {
+      width: calc(40% - 50px);
+      position: relative;
+      padding: 20px;
+  
+      @include size(lg) {
+        width: calc(50% - 15px);
+      }
+  
+      @include size(md) {
+        width: 80%;
+        margin-left: auto;
+        padding-left: 30px;
+        margin-top: 80px;
+      }
+  
+      .pre-title {
+        color: $text-color-fifth;
+        // font-size: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.375em;
+      }
+  
+      .title {
+        color: $text-color-fourth;
+        // font-size: 41px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.10em;
+        margin: 15px 0px 16px;
+      }
+  
+      .text {
+        color: $text-color-secondary;
+        font-size: 16px;
+      }
+  
+      .button {
+        width: 90%;
+        margin-top: 20px;
+      }
+    }
+  }
+}
