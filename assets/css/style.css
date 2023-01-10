@@ -943,6 +943,11 @@ body {
   bottom: 0px;
   z-index: -1;
 }
+@media only screen and (max-width: 992px) {
+  .main-content .text-with-image .wrapper .images::after {
+    left: 0px;
+  }
+}
 .main-content .text-with-image .wrapper .content {
   width: calc(40% - 50px);
   position: relative;
